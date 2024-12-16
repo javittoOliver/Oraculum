@@ -158,7 +158,6 @@ hide_st_style = """
             #MainMenu {visibility: hidden;} /* Oculta el menú */
             footer {visibility: hidden;} /* Oculta el footer */
             header {visibility: hidden;} /* Oculta el encabezado donde está el enlace a GitHub */
-            footer {visibility: hidden;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
