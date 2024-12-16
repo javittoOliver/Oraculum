@@ -161,10 +161,6 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-# Tu app
-st.title("Mi Aplicación Sin GitHub")
-
-
 # Descargar la imagen desde la URL
 response = requests.get(ruta_imagen)
 
