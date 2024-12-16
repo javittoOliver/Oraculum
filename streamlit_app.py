@@ -152,12 +152,13 @@ def mostrar_resultados(recomendacion):
 ######---- Interfaz en Streamlit-----#######################################################################################
 ############################################################################################################################
 
-# Ocultar el menú, footer y el enlace a GitHub
+# Ocultar enlaces a GitHub, encabezado, menú y footer
 hide_st_style = """
             <style>
-            #MainMenu {visibility: hidden;} /* Oculta el menú */
-            footer {visibility: hidden;} /* Oculta el footer */
-            header {visibility: hidden;} /* Oculta el encabezado donde está el enlace a GitHub */
+            #MainMenu {visibility: hidden;} /* Oculta el menú superior */
+            header {visibility: hidden;} /* Oculta el encabezado (incluye el enlace superior derecho) */
+            footer {visibility: hidden;} /* Oculta el footer completo */
+            div[role="complementary"] {display: none;} /* Oculta elementos adicionales en el pie */
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
