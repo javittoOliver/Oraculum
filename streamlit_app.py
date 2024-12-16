@@ -173,11 +173,12 @@ def mostrar_resultados(recomendacion):
         recomendacion_html = recomendacion.replace("\n", "<br>")
         st.markdown(
         f"""
-        <div style="background-color: #FDEBD9; padding: 10px; border-radius: 7px; color: #606062;
-        font-size: 18px; font-weight: 600; line-height: 1;">
+        <div style="background-color: #FCF3EA; padding: 10px; border-radius: 7px; color: #606062;
+        font-size: 16px; font-weight: 600; line-height: 1; margin-bottom: 10px !important;">
         <br>{recomendacion_html}<br>
         <br>
         </div>
+        <br>
         <hr style="border: 1px solid #606062; margin-top: 10px;">
         """,
         unsafe_allow_html=True
