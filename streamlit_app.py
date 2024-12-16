@@ -192,13 +192,7 @@ def mostrar_resultados(recomendacion):
 ######---- Interfaz en Streamlit-----#######################################################################################
 ############################################################################################################################
 
-# Inicia ngrok con la URL de Streamlit, omitiendo la advertencia del navegador
-#public_url = ngrok.connect(8501,  bind_tls=True)
 
-# Mostrar la URL de ngrok generada
-#print(f"Streamlit is running on: {public_url}")
-
-# Cargar la imagen Loope in Hiwork
 # Descargar la imagen desde la URL
 response = requests.get(ruta_imagen)
 
