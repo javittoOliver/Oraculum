@@ -155,6 +155,7 @@ def mostrar_resultados(recomendacion):
 
 # Descargar la imagen desde la URL
 response = requests.get(ruta_imagen)
+st.set_page_config(page_title="Mi Aplicación", page_icon="📊", layout="wide")
 
 if response.status_code == 200:
     image = Image.open(BytesIO(response.content))
