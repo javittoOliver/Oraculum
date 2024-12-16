@@ -152,10 +152,22 @@ def mostrar_resultados(recomendacion):
 ######---- Interfaz en Streamlit-----#######################################################################################
 ############################################################################################################################
 
+# Estilo personalizado para ocultar el footer
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+# Tu app
+st.title("Mi Aplicación Sin GitHub")
+
 
 # Descargar la imagen desde la URL
 response = requests.get(ruta_imagen)
-st.set_page_config(page_title="Mi Aplicación", page_icon="📊", layout="wide")
+
 
 if response.status_code == 200:
     image = Image.open(BytesIO(response.content))
