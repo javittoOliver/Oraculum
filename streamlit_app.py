@@ -101,48 +101,8 @@ def generar_recomendacion(nombre):
     
     return response_message
 
-def crear_grafico(datos):
-    # Crear el gráfico de líneas
-    fig, ax = plt.subplots(figsize=(6, 5))
 
-    ax.plot(datos['Fecha de respuesta'], datos['NPS'], marker='o', linestyle='-', color='b')
-
-    # Personalización del gráfico
-    ax.set_title('Tendencia de NPS', fontsize=16)
-    #ax.set_xlabel('Fecha de respuesta', fontsize=12)
-    ax.set_ylabel('NPS', fontsize=12)
-
-    # Eliminar líneas de los ejes x e y (spines)
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
-
-    # Eliminar las marcas en los ejes
-    ax.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=True)
-    ax.tick_params(axis='y', which='both', left=False, right=False, labelleft=True)
-
-    # Formato de fechas en el eje X
-    ax.xaxis.set_major_formatter(mdates.DateFormatter('%m/%Y'))  # Formato mm/aaaa
-    ax.xaxis.set_major_locator(mdates.MonthLocator())  # Espaciado mensual
-
-    # Mejorar la visualización de las fechas
-    plt.xticks(rotation=45, ha='right')  # Rotar fechas para mejor legibilidad
-
-    # Agregar un grid (opcional)
-    ax.grid(True, linestyle='--', alpha=0.7)
-
-    # Ajustar los márgenes para que no se corten las fechas
-    plt.tight_layout()
-
-    # Guardar el gráfico en BytesIO
-    img_buffer = BytesIO()
-    plt.savefig(img_buffer, format='png')
-    img_buffer.seek(0)
-    plt.close(fig)
-    return img_buffer
-
-# La función principal, ahora recibe el tópico como parámetro
+# La función principal, ahora recibe el nombre como parámetro
 def get_tip(nombre):
     
     nombre = nombre
@@ -230,7 +190,7 @@ st.markdown('''
 </a>
 ''', unsafe_allow_html=True)
 
-# Ingreso de ANI
+# Ingreso de Nombre
 st.subheader("Enter your Name")
 nombre_ingresado = st.text_input("your Name?:", "")
 
